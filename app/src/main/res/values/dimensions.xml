@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <dimen name="titleSize">38dp</dimen>
+    <dimen name="headingSize">32dp</dimen>
+    <dimen name="listHeadingSize">18dp</dimen>
+    <dimen name="listDesSize">14dp</dimen>
+    <dimen name="paragraphSize">16dp</dimen>
+</resources>

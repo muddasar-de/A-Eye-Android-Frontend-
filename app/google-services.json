@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81242692184",
+    "project_id": "a-eye-android",
+    "storage_bucket": "a-eye-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81242692184:android:15947cdf7a27c60b60882d",
+        "android_client_info": {
+          "package_name": "com.muddasarajmal.a_eye_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81242692184-n4825h6adt25qr1ejs92d1sdekrie94c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-D7XdBYDHRr03IK0r8ykClzl5ZdZJkaU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81242692184-n4825h6adt25qr1ejs92d1sdekrie94c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

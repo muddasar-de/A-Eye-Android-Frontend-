@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/fragment_navigation"
+    app:startDestination="@id/faceDetection">
+
+    <fragment
+        android:id="@+id/faceDetection"
+        android:name="com.muddasarajmal.a_eye_android.FaceDetection"
+        android:label="FaceDetection" />
+</navigation>

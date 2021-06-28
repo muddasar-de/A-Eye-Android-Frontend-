@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+
+        tools:context=".Profile">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/topAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24"
+                app:navigationIconTint="@color/black"
+                app:title="Profile Setting"
+                android:fontFamily="@font/montserrat"
+                app:titleTextColor="@color/black" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            app:layout_constraintTop_toBottomOf="@+id/topAppBarLayout"
+            tools:layout_editor_absoluteX="16dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="32dp"
+                android:paddingBottom="16dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/guideDP"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/ic_baseline_person_24"
+
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="0.5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageButton
+                    android:id="@+id/uploadProfilePictureBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:background="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/guideDP"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_drive_file_rename_outline_24"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <Button
+                    android:id="@+id/confirm_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Confirm ?"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/guideDP"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="User Name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/confirm_button" />
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_fields"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/listHeadingSize"
+                    android:textStyle="bold"
+
+                    app:layout_constraintTop_toBottomOf="@+id/textView1"
+                    tools:layout_editor_absoluteX="-16dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="User Age"
+                    android:fontFamily="@font/montserrat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userName" />
+                <TextView
+                    android:id="@+id/userAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_fields"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/listHeadingSize"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3"
+                    tools:layout_editor_absoluteX="20dp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Gender"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userAge" />
+
+                <TextView
+                    android:id="@+id/userGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_fields"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/listHeadingSize"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    tools:layout_editor_absoluteX="24dp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Guide Name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/userGender" />
+                <TextView
+                    android:id="@+id/guideName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_fields"
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/listHeadingSize"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/textView5"
+                    tools:layout_editor_absoluteX="20dp" />
+
+
+
+
+                <!--                <TextView-->
+<!--                    android:id="@+id/userNameDes"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/montserrat"-->
+<!--                    android:text="User Name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/guideDP" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/userName"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="@drawable/input_fields"-->
+<!--                    android:drawableLeft="@drawable/username_icon"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:drawableTint="@color/black"-->
+<!--                    android:editable="true"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="Name"-->
+<!--                    android:inputType="textPersonName"-->
+<!--                    android:paddingVertical="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHint="@color/black"-->
+<!--                    android:textSize="@dimen/paragraphSize"-->
+<!--                    android:textStyle="italic"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/userNameDes" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/userAgeDes"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/montserrat"-->
+<!--                    android:text="User Age"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/userName" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/userAge"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="@drawable/input_fields"-->
+<!--                    android:drawableLeft="@drawable/username_icon"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:drawableTint="@color/black"-->
+<!--                    android:editable="true"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="Age"-->
+<!--                    android:inputType="number"-->
+<!--                    android:paddingVertical="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHint="@color/black"-->
+<!--                    android:textSize="@dimen/paragraphSize"-->
+<!--                    android:textStyle="italic"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/userAgeDes" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/userGenderDes"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/montserrat"-->
+<!--                    android:text="Guide Name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/userAge" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/userGender"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="@drawable/input_fields"-->
+<!--                    android:drawableLeft="@drawable/username_icon"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:drawableTint="@color/black"-->
+<!--                    android:editable="true"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="Name"-->
+<!--                    android:inputType="number"-->
+<!--                    android:paddingVertical="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHint="@color/black"-->
+<!--                    android:textSize="@dimen/paragraphSize"-->
+<!--                    android:textStyle="italic"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/userGenderDes" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/guideNameDes"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:fontFamily="@font/montserrat"-->
+<!--                    android:text="Guide Name"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="14sp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.0"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/userGender" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/guideName"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:background="@drawable/input_fields"-->
+<!--                    android:drawableLeft="@drawable/username_icon"-->
+<!--                    android:drawablePadding="20dp"-->
+<!--                    android:drawableTint="@color/black"-->
+<!--                    android:editable="true"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="Name"-->
+<!--                    android:inputType="number"-->
+<!--                    android:paddingVertical="10dp"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textColorHint="@color/black"-->
+<!--                    android:textSize="@dimen/paragraphSize"-->
+<!--                    android:textStyle="italic"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/guideNameDes" />-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
