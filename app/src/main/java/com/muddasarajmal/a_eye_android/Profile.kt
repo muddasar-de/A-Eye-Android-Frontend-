@@ -1,25 +1,20 @@
 package com.muddasarajmal.a_eye_android
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.pm.PackageManager
-import android.media.Image
 import android.net.Uri
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.jar.Manifest
 
 class Profile : AppCompatActivity() {
     private lateinit var sharedPreferences : SharedPreferences
@@ -69,7 +64,7 @@ class Profile : AppCompatActivity() {
 
                         }
                         else{
-                            Toast.makeText(this, "No data retched",Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "No data retched", Toast.LENGTH_LONG).show()
                         }
 
                     }
@@ -91,31 +86,53 @@ class Profile : AppCompatActivity() {
         var intent = Intent()
         intent.setType("image/*")
         intent.setAction(Intent.ACTION_GET_CONTENT)
-        startActivityForResult(Intent.createChooser(intent,"Choose Picture") ,456)
+        startActivityForResult(Intent.createChooser(intent, "Choose Picture"), 456)
 
     }
 
     private fun uploadProfilePicture(){
+        val userEmail = sharedPreferences.getString("Email", "")
+        val imageUrl = (Math.random() * 9000).toInt() + 1000
+        val pathString = "images/$imageUrl.jpg"
         if(filePath != null){
             var pd = ProgressDialog(this)
             pd.setTitle("Uploading")
             pd.show()
-            val imageRef: StorageReference = FirebaseStorage.getInstance().reference.child("images/pic.jpg")
+            val imageRef: StorageReference = FirebaseStorage.getInstance().reference.child(pathString)
             imageRef.putFile(filePath)
-                .addOnSuccessListener {p0->
+                .addOnSuccessListener { p0->
+                    val map = mutableMapOf<String,Any>()
+                    map["dpUrl"] = pathString
+                    db.collection("users")
+                        .document("$userEmail").update(map)
                     pd.dismiss()
-                    Toast.makeText(applicationContext,"Profile Picture Uploaded",Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext,
+                        "Profile Picture Uploaded",
+                        Toast.LENGTH_LONG).show()
 
                 }
-                .addOnFailureListener{p0->
+                .addOnFailureListener{ p0->
                     pd.dismiss()
-                    Toast.makeText(applicationContext,p0.message,Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, p0.message, Toast.LENGTH_LONG).show()
                 }
-                .addOnProgressListener {p0->
+                .addOnProgressListener { p0->
                     var progress:Double = (100.0 * p0.bytesTransferred)/p0.totalByteCount
                     pd.setMessage("Uploading ${progress.toInt()}%")
                 }
 
         }
+    }
+    private fun setDp(){
+        
+        val userEmail = sharedPreferences.getString("Email", "")
+        db.collection("users")
+            .document("$userEmail")
+            .get()
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+
+                }
+
+        val storageRef = FirebaseStorage.getInstance().reference.child()
     }
 }
